@@ -1,0 +1,30 @@
+.case {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    padding: 50px 70px 20px 70px;
+}
+
+.table-bordered .border-2 {
+    border-width: 2px !important;
+}
+
+.custom-form {
+    border: 2px solid #000;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 40%;
+}
+
+.custom-table {
+    width: 100%;
+}
+
+.desc1-left {
+    height: 700px;
+    width: 300px;
+}
