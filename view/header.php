@@ -50,8 +50,9 @@
                     <div class="justify-content-end pe-5">
                         <?php
                         if (isset($_SESSION['username']) && ($_SESSION['username'] != "")) {
-                            echo '<a href="#""><button type=" button" class="btn btn-primary me-3">' . $_SESSION['username'] . '</button></a>';
-                            echo '<a href="index.php?act=exit""><button type=" button" class="btn btn-primary me-3">Thoat</button></a>';
+                            echo '<div class="text-white">Xin chao, <a href="index.php?act=user">' . $_SESSION['username'] . '</a>';
+                            echo '<a href="index.php?act=viewcart""><button type=" button" class="btn btn-primary ms-4 me-3">Gio hang</button></a>';
+                            echo '<a href="index.php?act=exit""><button type=" button" class="btn btn-primary me-3">Thoat</button></a></div>';
                         } else {
                         ?>
                             <a href="index.php?act=dangnhap"><button type=" button" class="btn btn-primary me-3">Dang nhap</button></a>

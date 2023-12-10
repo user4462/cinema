@@ -146,6 +146,25 @@ if (isset($_GET['act'])) {
         case 'dangky':
             include 'view/dangky.php';
             break;
+        case 'user':
+            $user = get_one_User($_SESSION['iduser']);
+            include "view/user.php";
+            break;
+        case 'user_update':
+            if(isset($_POST['update'])&&($_POST['update']))
+            {
+                $id=$_POST['id'];
+                $name=$_POST['name'];
+                $addr=$_POST['addr'];
+                $mail=$_POST['mail'];
+                $user=$_POST['user'];
+                $pass=$_POST['pass'];
+                $role=0;
+                update_User($id, $name, $addr, $mail, $user, $pass, $role);
+            }
+            $user = get_one_User($_SESSION['iduser']);
+            include "view/user.php";
+            break;
         default:
             include 'view/home.php';
             break;

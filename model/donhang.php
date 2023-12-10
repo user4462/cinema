@@ -1,8 +1,17 @@
 <?php
+function sum_total_in_month($mon)
+{
+    $conn = openCon();
+    $sql = "SELECT sum(total) FROM `orders` WHERE month(date)=" . $mon;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $res = $stmt->fetchAll();
+    return $res;
+}
 function count_prod_in_month($mon)
 {
     $conn = openCon();
-    $sql = "SELECT sum(amount) as tu FROM cart join orders on cart.order_id=orders.id and month(orders.date)=".$mon;
+    $sql = "SELECT sum(amount) FROM cart join orders on cart.order_id=orders.id and month(orders.date)=" . $mon;
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $res = $stmt->fetchAll();

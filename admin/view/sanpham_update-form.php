@@ -35,6 +35,9 @@
                 <img src="<?php echo $prod[0]['img'] ?>" alt="" width="80">
             </div>
             <div class="mb-3">
+                <input type="text" class="form-control" name="view" id="" value="<?php echo $prod[0]['view'] ?>">
+            </div>
+            <div class="mb-3">
                 <input type="text" class="form-control" name="price" id="" value="<?php echo $prod[0]['price'] ?>">
             </div>
             <input type="hidden" name="id" value="<?php echo $prod[0]['film_id'] ?>">

@@ -1,6 +1,3 @@
-<?php
-include "../model/donhang.php";
-?>
 <!doctype html>
 <html lang="en">
 
@@ -21,10 +18,11 @@ include "../model/donhang.php";
     </header>
     <main>
         <div class="main">
-            <h2>THONG KE</h2>
+            <h2>THONG KE NAM 2023</h2>
             <table class="table-bordered border-dark custom-table">
                 <thead>
                     <tr>
+                        <th class="border-2 p-2"></th>
                         <th class="border-2 p-2" style="background-color: #d3dce3;">Thang 1</th>
                         <th class="border-2 p-2" style="background-color: #d3dce3;">Thang 2</th>
                         <th class="border-2 p-2" style="background-color: #d3dce3;">Thang 3</th>
@@ -40,26 +38,52 @@ include "../model/donhang.php";
                     </tr>
                 </thead>
                 <?php
-                $arr=array();
+                $arr = array();
                 for ($i = 1; $i <= 12; $i++) {
-                    $arr[$i]=count_prod_in_month($i);
-                }
-                ?>
+                    $s = count_prod_in_month($i);
+                    if ($s[0][0] != "")
+                        $arr[$i] = $s[0][0];
+                    else $arr[$i] = 0;
+                } ?>
                 <tbody>
                     <tr>
-                        <td class="border-2 p-2"><?=$arr[12] ?></td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                        <td class="border-2 p-2">0</td>
-                    </tr>
+                        <th class="border-2 p-2" style="background-color: #d3dce3;">So luong da ban</th>
+                        <td class="border-2 p-2"><?= $arr[1] ?></td>
+                        <td class="border-2 p-2"><?= $arr[2] ?></td>
+                        <td class="border-2 p-2"><?= $arr[3] ?></td>
+                        <td class="border-2 p-2"><?= $arr[4] ?></td>
+                        <td class="border-2 p-2"><?= $arr[5] ?></td>
+                        <td class="border-2 p-2"><?= $arr[6] ?></td>
+                        <td class="border-2 p-2"><?= $arr[7] ?></td>
+                        <td class="border-2 p-2"><?= $arr[8] ?></td>
+                        <td class="border-2 p-2"><?= $arr[9] ?></td>
+                        <td class="border-2 p-2"><?= $arr[10] ?></td>
+                        <td class="border-2 p-2"><?= $arr[11] ?></td>
+                        <td class="border-2 p-2"><?= $arr[12] ?></td>
+                </tbody>
+                <?php
+                $arr = array();
+                for ($i = 1; $i <= 12; $i++) {
+                    $s = sum_total_in_month($i);
+                    if ($s[0][0] != "")
+                        $arr[$i] = $s[0][0];
+                    else $arr[$i] = 0;
+                } ?>
+                <tbody>
+                    <tr>
+                        <th class="border-2 p-2" style="background-color: #d3dce3;">Doanh thu</th>
+                        <td class="border-2 p-2"><?= $arr[1] ?></td>
+                        <td class="border-2 p-2"><?= $arr[2] ?></td>
+                        <td class="border-2 p-2"><?= $arr[3] ?></td>
+                        <td class="border-2 p-2"><?= $arr[4] ?></td>
+                        <td class="border-2 p-2"><?= $arr[5] ?></td>
+                        <td class="border-2 p-2"><?= $arr[6] ?></td>
+                        <td class="border-2 p-2"><?= $arr[7] ?></td>
+                        <td class="border-2 p-2"><?= $arr[8] ?></td>
+                        <td class="border-2 p-2"><?= $arr[9] ?></td>
+                        <td class="border-2 p-2"><?= $arr[10] ?></td>
+                        <td class="border-2 p-2"><?= $arr[11] ?></td>
+                        <td class="border-2 p-2"><?= $arr[12] ?></td>
                 </tbody>
             </table>
         </div>
