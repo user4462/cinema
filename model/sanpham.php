@@ -1,10 +1,27 @@
 <?php
+function get_hot_Prod()
+{
+    $conn = openCon();
+    $stmt = $conn->prepare("SELECT * FROM film order by view desc limit 0,6");
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $res = $stmt->fetchAll();
+    return $res;
+}
+function view_increased($id)
+{
+    $conn = openCon();
+    $sql = "UPDATE film SET view=view+1 WHERE film_id=" . $id;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+}
 function add_Prod($cate_id, $film_name, $price, $img, $view)
 {
     $conn = openCon();
     $sql = "INSERT INTO film (cate_id,film_name,price,img,view) VALUES ('$cate_id','$film_name','$price','$img','$view')";
     $conn->exec($sql);
 }
+
 function delete_Prod($id)
 {
     $conn = openCon();

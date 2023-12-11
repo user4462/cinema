@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 09, 2023 lúc 10:04 AM
+-- Thời gian đã tạo: Th12 11, 2023 lúc 05:32 AM
 -- Phiên bản máy phục vụ: 8.0.31
 -- Phiên bản PHP: 8.0.26
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   PRIMARY KEY (`id`),
   KEY `fk_giohang_sanpham` (`film_id`),
   KEY `fk_giohang_donhang` (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `cart`
@@ -49,7 +49,9 @@ INSERT INTO `cart` (`id`, `order_id`, `film_id`, `amount`, `sum_price`, `film_na
 (160, 184, 41, 1, 80.00, 'the last', '../uploads/s-l1600.jpg'),
 (161, 185, 41, 2, 80.00, 'the last', '../uploads/s-l1600.jpg'),
 (162, 185, 40, 1, 100.00, 'star war', '../uploads/product-1.jpg'),
-(163, 185, 44, 1, 120.00, 'batman', '../uploads/carousel-2.jpg');
+(163, 185, 44, 1, 120.00, 'batman', '../uploads/carousel-2.jpg'),
+(174, 191, 43, 1, 100.00, 'nam 1917 ', '../uploads/56.jpg'),
+(175, 192, 44, 1, 120.00, 'batman', '../uploads/carousel-2.jpg');
 
 -- --------------------------------------------------------
 
@@ -98,12 +100,12 @@ CREATE TABLE IF NOT EXISTS `film` (
 --
 
 INSERT INTO `film` (`film_id`, `film_name`, `img`, `view`, `old_price`, `price`, `cate_id`, `detail`) VALUES
-(40, 'star war', '../uploads/product-1.jpg', 1, 0, 100, 29, NULL),
-(41, 'the last', '../uploads/s-l1600.jpg', 0, 0, 80, 29, NULL),
-(42, 'thor', '../uploads/thor-the-dark-world-crowded-691x1024.jpg', 0, 0, 60, 29, NULL),
-(43, 'nam 1917 ', '../uploads/56.jpg', 0, 0, 100, 29, NULL),
-(44, 'batman', '../uploads/carousel-2.jpg', 0, 0, 120, 30, NULL),
-(47, 'hidden strike', '../uploads/carousel-4.jpg', 0, 0, 80, 29, NULL);
+(40, 'star war', '../uploads/product-1.jpg', 10, 0, 100, 29, NULL),
+(41, 'the last', '../uploads/s-l1600.jpg', 1, 0, 80, 29, NULL),
+(42, 'thor', '../uploads/thor-the-dark-world-crowded-691x1024.jpg', 8, 0, 60, 29, NULL),
+(43, 'nam 1917 ', '../uploads/56.jpg', 13, 0, 100, 29, NULL),
+(44, 'batman', '../uploads/carousel-2.jpg', 14, 0, 120, 30, NULL),
+(47, 'hidden strike', '../uploads/carousel-4.jpg', 5, 0, 80, 29, NULL);
 
 -- --------------------------------------------------------
 
@@ -117,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `total` double(10,2) NOT NULL DEFAULT '0.00',
   `pttt` tinyint(1) NOT NULL DEFAULT '1',
-  `date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` int NOT NULL,
   `user_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -125,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `tel` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_donhang_taikhoan` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `orders`
@@ -133,7 +135,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 INSERT INTO `orders` (`id`, `code`, `total`, `pttt`, `date`, `user_id`, `user_name`, `address`, `email`, `tel`) VALUES
 (184, 'aba360623', 80.00, 1, '2023/12/09', 0, '', '', '', ''),
-(185, 'aba663610', 380.00, 1, '2023/12/09', 0, '', '', '', '');
+(185, 'aba663610', 380.00, 1, '2023/12/09', 0, '', '', '', ''),
+(191, 'aba129151', 100.00, 1, '2023/12/10', 2, '', '', '', ''),
+(192, 'aba811103', 120.00, 1, '2023/12/10', 2, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -160,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `address`, `email`, `user`, `pass`, `role`) VALUES
 (0, 'khachhang', NULL, NULL, '', '', 0),
 (1, 'dang khoa', 'phu my, q7', 'khoa@gmail.com', 'admin', '123', 1),
-(2, 'khoa234', 'tan phu dong, sa dec', 'nguoianhhung@gmail.com', 'hotb', '456', 0);
+(2, 'khoa23', 'tan phu dong, sa dec', 'nguoianhhung@gmail.com', 'hotb', '456', 0);
 
 --
 -- Các ràng buộc cho các bảng đã đổ

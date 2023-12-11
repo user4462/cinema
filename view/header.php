@@ -26,7 +26,10 @@
         <div class="background">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand fs-2 ps-5 text-white" href="#">LOGO</a>
+                    <a class="navbar-brand px-5 fs-2 text-white" href="index.php">
+                        KC inc.
+                        <img src="/images/aaa.png" alt="" height="50px">
+                    </a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
@@ -37,7 +40,8 @@
                                     Products
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <?php 
+                                    <li><a class="dropdown-item" href="index.php?act=products">Tat ca san pham</a></li>
+                                    <?php
                                     $cate_list = get_all_Cate();
                                     foreach ($cate_list as $item) {
                                         echo '<li><a class="dropdown-item" href="index.php?act=products&id=' . $item['cate_id'] . '">' . $item['cate_name'] . '</a></li>';
@@ -45,12 +49,15 @@
                                     ?>
                                 </ul>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link fs-5 px-3 text-white" href="index.php?act=about">About us</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="justify-content-end pe-5">
                         <?php
                         if (isset($_SESSION['username']) && ($_SESSION['username'] != "")) {
-                            echo '<div class="text-white">Xin chao, <a href="index.php?act=user">' . $_SESSION['username'] . '</a>';
+                            echo '<div class="text-white">Xin chao, <a href="index.php?act=user" class="text-danger">' . $_SESSION['username'] . '</a>';
                             echo '<a href="index.php?act=viewcart""><button type=" button" class="btn btn-primary ms-4 me-3">Gio hang</button></a>';
                             echo '<a href="index.php?act=exit""><button type=" button" class="btn btn-primary me-3">Thoat</button></a></div>';
                         } else {

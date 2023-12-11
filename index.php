@@ -8,7 +8,7 @@ include 'model/donhang.php';
 include 'model/sanpham.php';
 include 'model/taikhoan.php';
 $cate_list = get_all_Cate();
-$prod_list = get_all_Prod();
+$prod_list = get_hot_Prod();
 include 'view/header.php';
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -23,7 +23,6 @@ if (isset($_GET['act'])) {
             $cate = get_one_Cate($id);
             $prod_list = get_all_Prod($kyw, $id);
             include 'view/products.php';
-
             break;
         case 'giohang_add':
             if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
@@ -74,6 +73,7 @@ if (isset($_GET['act'])) {
             if ((isset($_GET['id'])) && ($_GET['id'] > 0))
                 $id = $_GET['id'];
             $prod = get_one_Prod($id);
+            view_increased($id);
             include "view/product_info.php";
             break;
         case 'exit':
@@ -121,8 +121,8 @@ if (isset($_GET['act'])) {
                 if (isset($_POST['pttt']))
                     $pttt = $_POST['pttt'];
                 else $pttt = 1;
-                if (isset($_POST['user_id']))
-                    $user_id = $_POST['user_id'];
+                if (isset($_SESSION['iduser']))
+                    $user_id = $_SESSION['iduser'];
                 else $user_id = 0;
                 $date = date('Y/m/d');
                 $code = "aba" . rand(0, 999999);
@@ -138,6 +138,7 @@ if (isset($_GET['act'])) {
             include 'view/order.php';
             break;
         case 'viewcart':
+            $sum_price=0;
             include 'view/viewcart.php';
             break;
         case 'dangnhap':
@@ -148,18 +149,41 @@ if (isset($_GET['act'])) {
             break;
         case 'user':
             $user = get_one_User($_SESSION['iduser']);
+            $id = get_orderId_from_userId($user[0]['id']);
             include "view/user.php";
             break;
+        case 'donhang_del_sanpham':
+            $user = get_one_User($_SESSION['iduser']);
+            $id = get_orderId_from_userId($user[0]['id']);
+            if (isset($_GET['id'])) {
+                $cart_id = $_GET['id'];
+            }
+            $order_id = $_GET['order_id'];
+            $order = get_one_Order($order_id);
+            $cart = get_one_Cart($cart_id);
+            $s = $order[0]['total'] - ($cart[0]['sum_price'] * $cart[0]['amount']);
+            update_Total_Order($order_id, $s);
+            delete_film_in_Order($cart_id);
+            $cart_list = get_all_Cart_in_Order($order_id);
+            if (count($cart_list) > 0) {
+                $order_list = get_all_Order();
+                include "view/user.php";
+                break;
+            } else {
+                delete_Order($order_id);
+                unset($_SESSION['giohang']);
+                header('location: ./index.php?act=user');
+                break;
+            }
         case 'user_update':
-            if(isset($_POST['update'])&&($_POST['update']))
-            {
-                $id=$_POST['id'];
-                $name=$_POST['name'];
-                $addr=$_POST['addr'];
-                $mail=$_POST['mail'];
-                $user=$_POST['user'];
-                $pass=$_POST['pass'];
-                $role=0;
+            if (isset($_POST['update']) && ($_POST['update'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $addr = $_POST['addr'];
+                $mail = $_POST['mail'];
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                $role = 0;
                 update_User($id, $name, $addr, $mail, $user, $pass, $role);
             }
             $user = get_one_User($_SESSION['iduser']);

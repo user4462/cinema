@@ -1,4 +1,13 @@
 <?php
+function get_orderId_from_userId($id)
+{
+    $conn = openCon();
+    $sql = "SELECT id FROM orders WHERE user_id=" . $id;
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $res = $stmt->fetchAll();
+    return $res;
+}
 function sum_total_in_month($mon)
 {
     $conn = openCon();

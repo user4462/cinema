@@ -38,12 +38,13 @@
           <div class="row">
             <!--Grid column-->
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-white">
-              <h5 class="text-uppercase">Footer Content</h5>
-
+              <h5 class="text-uppercase fs-3">
+                KC inc.
+                <img src="/images/aaa.png" alt="" height="50px">
+              </h5>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
-                aliquam voluptatem veniam, est atque cumque eum delectus sint!
+                Chúng tôi tạo ra trải nghiệm độc đáo với không khí hứng khởi và chất lượng âm thanh và hình ảnh đỉnh cao, là nơi thu hút đông đảo người yêu điện ảnh.
+                Tại đây, khán giả không chỉ chìm đắm vào câu chuyện của bộ phim mà còn trở thành một phần của cộng đồng người hâm mộ, chia sẻ niềm đam mê và cảm xúc với những tác phẩm nghệ thuật đa dạng từ khắp nơi trên thế giới.
               </p>
             </div>
             <!--Grid column-->
@@ -51,7 +52,6 @@
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
               <h5 class="text-uppercase">Links</h5>
-
               <ul class="list-unstyled mb-0">
                 <li>
                   <a href="#!" class="text-white">Link 1</a>
@@ -71,8 +71,7 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-              <h5 class="text-uppercase mb-0">Links</h5>
-
+              <h5 class="text-uppercase mb-0">Contact</h5>
               <ul class="list-unstyled">
                 <li>
                   <a href="#!" class="text-white">Link 1</a>
@@ -95,8 +94,8 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2023 Copyright: abc
+        <div class="text-center p-3 text-white fs-6" style="background-color: rgba(0, 0, 0, 0.05);">
+          2023 © KC inc. ALL RIGHTS RESERVED.
         </div>
         <!-- Copyright -->
       </footer>

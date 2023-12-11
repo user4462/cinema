@@ -29,7 +29,7 @@
             <h3 class="tittle text-center">GIO HANG</h3>
             <div class="row contact-main-info mt-4">
                 <div class="col-md-6 contact-left-content ">
-                    <h3>San pham trong gia hang</h3>
+                    <h3>San pham trong gio hang</h3>
                     <?php
                     if ((isset($_SESSION['giohang'])) && (count($_SESSION['giohang']) > 0)) {
                         echo '

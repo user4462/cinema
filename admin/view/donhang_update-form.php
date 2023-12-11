@@ -91,8 +91,7 @@
                 $i++;
             }
             ?>
-
-            <td class="border-2 p-2" colspan="5">Tong</td>
+            <th class="border-2 p-2" style="background-color: #d3dce3;" colspan="5">Tong</th>
             <td class="border-2 p-2"><?= $s ?></td>
             <td class="border-2 p-2"></td>
         </table>

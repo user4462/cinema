@@ -54,7 +54,7 @@
         <div class="container pt-4">
             <div class="row pb-1">
                 <div class="col-6">
-                    <h1>chon phim</h1>
+                    <h1>Phim hot</h1>
                 </div>
                 <div class="col-6 ">
                     <nav class="navbar bg-body-tertiary justify-content-end">
