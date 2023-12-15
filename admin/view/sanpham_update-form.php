@@ -38,6 +38,9 @@
                 <input type="text" class="form-control" name="view" id="" value="<?php echo $prod[0]['view'] ?>">
             </div>
             <div class="mb-3">
+                <input type="text" class="form-control" name="old_price" id="" value="<?php echo $prod[0]['old_price'] ?>">
+            </div>
+            <div class="mb-3">
                 <input type="text" class="form-control" name="price" id="" value="<?php echo $prod[0]['price'] ?>">
             </div>
             <input type="hidden" name="id" value="<?php echo $prod[0]['film_id'] ?>">
@@ -49,6 +52,8 @@
                     <th class="border-2 p-2" style="background-color: #d3dce3;">STT</th>
                     <th class="border-2 p-2" style="background-color: #d3dce3;">Ten san pham</th>
                     <th class="border-2 p-2" style="background-color: #d3dce3;">Hinh anh</th>
+                    <th class="border-2 p-2" style="background-color: #d3dce3;">Luot xem</th>
+                    <th class="border-2 p-2" style="background-color: #d3dce3;">Gia cu</th>
                     <th class="border-2 p-2" style="background-color: #d3dce3;">Gia</th>
                     <th class="border-2 p-2" style="background-color: #d3dce3;">Hanh dong</th>
                 </tr>
@@ -61,6 +66,8 @@
                     <td class="border-2 p-2">' . $i . '</td>
                     <td class="border-2 p-2">' . $item['film_name'] . '</td>
                     <td class="border-2 p-2"><img src="' . $item['img'] . '" height="120px" width="80px"></td>
+                    <td class="border-2 p-2">' . $item['view'] . '</td>
+                    <td class="border-2 p-2">' . $item['old_price'] . '</td>
                     <td class="border-2 p-2">' . $item['price'] . '</td>
                     <td class="border-2 p-2">
                         <div class="d-flex justify-content-around">

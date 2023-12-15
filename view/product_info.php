@@ -29,17 +29,18 @@
                         <input type="hidden" value="<?= $prod[0]['price'] ?>" name="price">
                         <button type="submit" class="btn btn-outline-primary" name="addtocart" value="addtocart">Add</button>
                     </form>
-                    <p><?= $prod[0]['detail'] ?></p>
+
                 </div>
             </div>
         </div>
         <div class="row pt-3">
             <div class="col-md-6 pe-5">
                 <h3>Trailer</h3>
+                <p class="fs-5"><?= $prod[0]['trailer'] ?></p>
             </div>
             <div class="col-md-6 pl-lg-4">
-                <h3>gioi thieu</h3>
-                <p><?= $prod[0]['detail'] ?></p>
+                <h3>Gioi thieu</h3>
+                <p class="fs-5"><?= $prod[0]['detail'] ?></p>
             </div>
         </div>
     </div>

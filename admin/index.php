@@ -59,6 +59,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     $cate_id = $_POST['cate_id'];
                     $film_name = $_POST['name'];
                     $price = $_POST['price'];
+                    $old_price = $_POST['old_price'];
                     $view = $_POST['view'];
                     $target_dir = "../uploads/";
                     $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -75,7 +76,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     }
                     if ($uploadOk == 1) {
                         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-                        add_Prod($cate_id, $film_name, $price, $img, $view);
+                        add_Prod($cate_id, $film_name,$old_price, $price, $img, $view);
                     }
                 }
                 $cate_list = get_all_Cate();
@@ -103,6 +104,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 if (isset($_POST['update']) && ($_POST['update'])) {
                     $cate_id = $_POST['cate_id'];
                     $film_name = $_POST['name'];
+                    $old_price = $_POST['old_price'];
                     $price = $_POST['price'];
                     $view = $_POST['view'];
                     $film_id = $_POST['id'];
@@ -125,7 +127,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                             //insert_sanpham($iddm, $tensp, $gia, $img);
                         }
                     } else $img = "";
-                    update_Prod($film_id, $film_name, $img, $view, $price, $cate_id);
+                    update_Prod($film_id, $film_name, $img, $view,$old_price, $price, $cate_id);
                 }
                 $prod_list = get_all_Prod();
                 include "view/sanpham.php";

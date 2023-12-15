@@ -15,10 +15,10 @@ function view_increased($id)
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 }
-function add_Prod($cate_id, $film_name, $price, $img, $view)
+function add_Prod($cate_id, $film_name,$old_price, $price, $img, $view)
 {
     $conn = openCon();
-    $sql = "INSERT INTO film (cate_id,film_name,price,img,view) VALUES ('$cate_id','$film_name','$price','$img','$view')";
+    $sql = "INSERT INTO film (cate_id,film_name,old_price,price,img,view) VALUES ('$cate_id','$film_name','$old_price','$price','$img','$view')";
     $conn->exec($sql);
 }
 
@@ -28,13 +28,13 @@ function delete_Prod($id)
     $sql = "DELETE FROM film WHERE film_id=" . $id;
     $conn->exec($sql);
 }
-function update_Prod($id, $film_name, $img, $view, $price, $cate_id)
+function update_Prod($id, $film_name, $img, $view,$old_price, $price, $cate_id)
 {
     $conn = openCon();
     if ($img == "") {
-        $sql = "UPDATE film SET film_name='" . $film_name . "',view='" . $view . "',price='" . $price . "',cate_id='" . $cate_id . "' WHERE film_id=" . $id;
+        $sql = "UPDATE film SET film_name='" . $film_name . "',view='" . $view . "',old_price='" . $old_price . "',price='" . $price . "',cate_id='" . $cate_id . "' WHERE film_id=" . $id;
     } else {
-        $sql = "UPDATE film SET film_name='" . $film_name . "',view='" . $view . "',price='" . $price . "',cate_id='" . $cate_id . "',img='" . $img . "' WHERE film_id=" . $id;
+        $sql = "UPDATE film SET film_name='" . $film_name . "',view='" . $view . "',old_price='" . $old_price . "',price='" . $price . "',cate_id='" . $cate_id . "',img='" . $img . "' WHERE film_id=" . $id;
     }
 
     $stmt = $conn->prepare($sql);

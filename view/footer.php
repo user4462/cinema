@@ -33,69 +33,63 @@
       <!-- Footer -->
       <footer class="background">
         <!-- Grid container -->
-        <div class="container p-4">
-          <!--Grid row-->
-          <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0 text-white">
-              <h5 class="text-uppercase fs-3">
-                KC inc.
-                <img src="/images/aaa.png" alt="" height="50px">
-              </h5>
-              <p>
-                Chúng tôi tạo ra trải nghiệm độc đáo với không khí hứng khởi và chất lượng âm thanh và hình ảnh đỉnh cao, là nơi thu hút đông đảo người yêu điện ảnh.
-                Tại đây, khán giả không chỉ chìm đắm vào câu chuyện của bộ phim mà còn trở thành một phần của cộng đồng người hâm mộ, chia sẻ niềm đam mê và cảm xúc với những tác phẩm nghệ thuật đa dạng từ khắp nơi trên thế giới.
-              </p>
-            </div>
-            <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-              <h5 class="text-uppercase">Links</h5>
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
+        <!--Grid row-->
+        <div class="row pt-2">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-white" style="padding-left: 150px;">
+            <h5 class="text-uppercase fs-3">
+              KC inc.
+              <img src="/images/aaa.png" alt="" height="50px">
+            </h5>
+            <p>
 
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-              <h5 class="text-uppercase mb-0">Contact</h5>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                  <a href="#!" class="text-white">Link 4</a>
-                </li>
-              </ul>
-            </div>
-            <!--Grid column-->
+              Tại đây, khán giả không chỉ chìm đắm vào câu chuyện của bộ phim mà còn trở thành một phần của cộng đồng người hâm mộ, chia sẻ niềm đam mê và cảm xúc với những tác phẩm nghệ thuật đa dạng từ khắp nơi trên thế giới.
+            </p>
           </div>
-          <!--Grid row-->
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-white" style="padding-left: 150px;">
+            <h5 class="text-uppercase">Contact</h5>
+            <ul class="list-unstyled mb-0">
+            <li >
+                <i class="fa-regular fa-envelope"></i>
+                <a href="#" class="text-white">abc@gmail.com</a>
+              </li>
+              <li class="pt-1">
+                <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+                +84 23 1234 7856
+              </li>
+              <li class="pt-1">
+                <i class="fa-solid fa-location-dot"></i>
+                180 Đ. Cao Lỗ, Phường 4, Quận 8, Thành phố Hồ Chí Minh
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-white" style="padding-left: 50px;">
+            <h5 class="text-uppercase">Social</h5>
+            <ul class="list-unstyled mb-0">
+            <li class="pt-3">
+                <i class="fa-brands fa-facebook fa-3x"></i>
+                <i class="fa-brands fa-instagram fa-3x ps-3"></i>
+                <i class="fa-brands fa-youtube fa-3x ps-3"></i>
+                <i class="fa-brands fa-tiktok fa-3x ps-3"></i>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
         </div>
         <!-- Grid container -->
 
         <!-- Copyright -->
         <div class="text-center p-3 text-white fs-6" style="background-color: rgba(0, 0, 0, 0.05);">
-          2023 © KC inc. ALL RIGHTS RESERVED.
+          Copyright © 2023 All rights reserved.
         </div>
         <!-- Copyright -->
       </footer>
