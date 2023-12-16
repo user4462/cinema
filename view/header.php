@@ -33,10 +33,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active fs-4 px-3 text-white" aria-current="page" href="index.php">Home</a>
+                                <a class="nav-link active fs-5 px-3 text-white" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle fs-4 px-3 text-white" href="index.php?act=products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle fs-5 px-3 text-white" href="index.php?act=products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Products
                                 </a>
                                 <ul class="dropdown-menu">
@@ -50,7 +50,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fs-4 px-3 text-white" href="index.php?act=about">About us</a>
+                                <a class="nav-link fs-5 px-3 text-white" href="index.php?act=about">About us</a>
                             </li>
                         </ul>
                     </div>

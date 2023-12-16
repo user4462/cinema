@@ -11,8 +11,8 @@
 <body>
     <div class="container py-4">
         <div class="row">
-            <div class="desc1-left col-md-6 pe-5">
-                <img src="/uploads/<?= $prod[0]['img'] ?>" class="" alt="" height="100%" width="100%">
+            <div class="desc1-left col-md-5 pb-3">
+                <img src="/uploads/<?= $prod[0]['img'] ?>" class="" alt="" height="500px" width="350px">
             </div>
             <div class="desc1-right col-md-6 pl-lg-4">
                 <h3><?= $prod[0]['film_name'] ?></h3>
@@ -29,18 +29,21 @@
                         <input type="hidden" value="<?= $prod[0]['price'] ?>" name="price">
                         <button type="submit" class="btn btn-outline-primary" name="addtocart" value="addtocart">Add</button>
                     </form>
-
+                    <div>
+                        <h3>Gioi thieu</h3>
+                        <p class="fs-5"><?= $prod[0]['detail'] ?></p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row pt-3">
-            <div class="col-md-6 pe-5">
+            <div class="col-md-6">
                 <h3>Trailer</h3>
                 <p class="fs-5"><?= $prod[0]['trailer'] ?></p>
             </div>
             <div class="col-md-6 pl-lg-4">
                 <h3>Gioi thieu</h3>
-                <p class="fs-5"><?= $prod[0]['detail'] ?></p>
+                <p class="fs-5"><?= $prod[0]['desc'] ?></p>
             </div>
         </div>
     </div>

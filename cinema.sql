@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th12 11, 2023 lúc 05:32 AM
+-- Thời gian đã tạo: Th12 16, 2023 lúc 05:54 AM
 -- Phiên bản máy phục vụ: 8.0.31
 -- Phiên bản PHP: 8.0.26
 
@@ -46,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `cart` (
 --
 
 INSERT INTO `cart` (`id`, `order_id`, `film_id`, `amount`, `sum_price`, `film_name`, `img`) VALUES
-(160, 184, 41, 1, 80.00, 'the last', '../uploads/s-l1600.jpg'),
 (161, 185, 41, 2, 80.00, 'the last', '../uploads/s-l1600.jpg'),
 (162, 185, 40, 1, 100.00, 'star war', '../uploads/product-1.jpg'),
 (163, 185, 44, 1, 120.00, 'batman', '../uploads/carousel-2.jpg'),
@@ -90,22 +89,25 @@ CREATE TABLE IF NOT EXISTS `film` (
   `old_price` double(10,0) NOT NULL DEFAULT '0',
   `price` double(10,0) NOT NULL,
   `cate_id` int NOT NULL,
+  `trailer` text COLLATE utf8mb4_unicode_ci,
   `detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   PRIMARY KEY (`film_id`),
   KEY `fk_sanpham_danhmuc` (`cate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `film`
 --
 
-INSERT INTO `film` (`film_id`, `film_name`, `img`, `view`, `old_price`, `price`, `cate_id`, `detail`) VALUES
-(40, 'star war', '../uploads/product-1.jpg', 10, 0, 100, 29, NULL),
-(41, 'the last', '../uploads/s-l1600.jpg', 1, 0, 80, 29, NULL),
-(42, 'thor', '../uploads/thor-the-dark-world-crowded-691x1024.jpg', 8, 0, 60, 29, NULL),
-(43, 'nam 1917 ', '../uploads/56.jpg', 13, 0, 100, 29, NULL),
-(44, 'batman', '../uploads/carousel-2.jpg', 14, 0, 120, 30, NULL),
-(47, 'hidden strike', '../uploads/carousel-4.jpg', 5, 0, 80, 29, NULL);
+INSERT INTO `film` (`film_id`, `film_name`, `img`, `view`, `old_price`, `price`, `cate_id`, `trailer`, `detail`) VALUES
+(40, 'star war', '../uploads/product-1.jpg', 10, 0, 100, 29, NULL, NULL),
+(41, 'the last', '../uploads/s-l1600.jpg', 1, 0, 80, 29, NULL, NULL),
+(42, 'thor', '../uploads/thor-the-dark-world-crowded-691x1024.jpg', 8, 0, 60, 29, NULL, NULL),
+(43, 'nam 1917 ', '../uploads/56.jpg', 13, 0, 100, 29, NULL, NULL),
+(44, 'batman', '../uploads/carousel-2.jpg', 15, 0, 120, 30, NULL, NULL),
+(47, 'hidden strike', '../uploads/carousel-4.jpg', 5, 0, 80, 29, NULL, NULL),
+(49, 'bui doi cho lon', '../uploads/1362820103-poster-4.jpg', 15, 0, 0, 30, '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/b9pw1sdwyYs?si=EIBpWE5vqN9RPLzn\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>', 'Phim xoay quanh mối quan hệ phức tạp giữa 4 nhân vật chính là Hùng Chợ Lớn, Tài Nhớt,  Phong Bụi và Lâm. Lâm là em trai Hùng, vì quá si mê Hương - người tình của Tài Nhớt nên đã đắc tội với gã đối thủ máu lạnh. Vốn đã có âm mưu chiếm lấy Chợ Lớn nên nhân cơ hội này Tài Nhớt buộc Hùng phải đối đầu với mình. Để tăng thêm phần thắng, hắn đã tìm mọi cách khiến cho Phong Bụi - một cao thủ ẩn mình mà y luôn xem như anh em phải quay trở lại giúp y đánh bại Hùng. Và cuộc chiến đã nổ ra giữa 2 nhóm Tài Nhớt - Hùng Chợ Lớn với những trận đấu sinh tử một mất một còn...'),
+(50, 'joker', '../uploads/thejoker-action-batman-movie.jpg', 1, 156, 13, 30, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -134,10 +136,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
 --
 
 INSERT INTO `orders` (`id`, `code`, `total`, `pttt`, `date`, `user_id`, `user_name`, `address`, `email`, `tel`) VALUES
-(184, 'aba360623', 80.00, 1, '2023/12/09', 0, '', '', '', ''),
 (185, 'aba663610', 380.00, 1, '2023/12/09', 0, '', '', '', ''),
-(191, 'aba129151', 100.00, 1, '2023/12/10', 2, '', '', '', ''),
-(192, 'aba811103', 120.00, 1, '2023/12/10', 2, '', '', '', '');
+(191, 'aba129151', 100.00, 1, '2023/11/10', 2, '', '', '', ''),
+(192, 'aba811103', 120.00, 1, '2023/1/10', 2, '', '', '', '');
 
 -- --------------------------------------------------------
 
