@@ -87,7 +87,7 @@
                                 <td class="border-2 p-2"><?= $arr[11] ?></td>
                                 <td class="border-2 p-2"><?= $arr[12] ?></td>
                         </tbody>
-                        <div class="" id="myChart" style="width:100%; height:350px;">
+                        <div class="" id="myChart" style="width:100%; height:400px;">
                         </div>
                     </table>
                 </div>

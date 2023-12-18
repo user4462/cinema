@@ -37,20 +37,19 @@
         <!--Grid row-->
         <div class="row pt-2">
           <!--Grid column-->
-          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-white" style="padding-left: 150px;">
-            <h5 class="text-uppercase fs-3">
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-white" style="padding-left: 30px;">
+            <h5 class="text-uppercase">
               KC inc.
               <img src="/images/aaa.png" alt="" height="50px">
             </h5>
             <p>
-
               Tại đây, khán giả không chỉ chìm đắm vào câu chuyện của bộ phim mà còn trở thành một phần của cộng đồng người hâm mộ, chia sẻ niềm đam mê và cảm xúc với những tác phẩm nghệ thuật đa dạng từ khắp nơi trên thế giới.
             </p>
           </div>
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-white" style="padding-left: 150px;">
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-white" style="padding-left: 50px;">
             <h5 class="text-uppercase">Contact</h5>
             <ul class="list-unstyled mb-0">
             <li >
@@ -74,10 +73,10 @@
             <h5 class="text-uppercase">Social</h5>
             <ul class="list-unstyled mb-0">
             <li class="pt-3">
-                <i class="fa-brands fa-facebook fa-3x"></i>
-                <i class="fa-brands fa-instagram fa-3x ps-3"></i>
-                <i class="fa-brands fa-youtube fa-3x ps-3"></i>
-                <i class="fa-brands fa-tiktok fa-3x ps-3"></i>
+                <i class="fa-brands fa-facebook fa-2x"></i>
+                <i class="fa-brands fa-instagram fa-2x ps-3"></i>
+                <i class="fa-brands fa-youtube fa-2x ps-3"></i>
+                <i class="fa-brands fa-tiktok fa-2x ps-3"></i>
               </li>
             </ul>
           </div>

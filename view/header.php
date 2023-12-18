@@ -26,7 +26,7 @@
         <div class="background">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand px-5 fs-2 text-white" href="index.php">
+                    <a class="navbar-brand pe-5 fs-2 text-white" href="index.php" style="padding-left: 30px;">
                         KC inc.
                         <img src="/images/aaa.png" alt="" height="50px">
                     </a>
