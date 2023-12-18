@@ -18,7 +18,7 @@
         <div class="p-4 text-white">
             <h2 class="">ADMIN</h2>
             <nav>
-                <a href="/admin/index.php?act=home" class="px-3  text-white">Trang chu</a>
+                <a href="/admin/index.php" class="px-3  text-white">Trang chu</a>
                 <a href="/admin/index.php?act=danhmuc" class="px-3  text-white">Danh muc</a>
                 <a href="/admin/index.php?act=sanpham" class="px-3  text-white">San pham</a>
                 <a href="/admin/index.php?act=taikhoan" class="px-3  text-white">Tai khoan</a>

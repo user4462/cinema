@@ -76,7 +76,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     }
                     if ($uploadOk == 1) {
                         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-                        add_Prod($cate_id, $film_name,$old_price, $price, $img, $view);
+                        add_Prod($cate_id, $film_name, $old_price, $price, $img, $view);
                     }
                 }
                 $cate_list = get_all_Cate();
@@ -127,7 +127,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                             //insert_sanpham($iddm, $tensp, $gia, $img);
                         }
                     } else $img = "";
-                    update_Prod($film_id, $film_name, $img, $view,$old_price, $price, $cate_id);
+                    update_Prod($film_id, $film_name, $img, $view, $old_price, $price, $cate_id);
                 }
                 $prod_list = get_all_Prod();
                 include "view/sanpham.php";
@@ -253,8 +253,29 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 $order_list = get_all_Order();
                 include "view/donhang.php";
                 break;
-            case 'home':
-                include "view/home.php";
+            case 'thongke':
+                $opt = $_GET['opt'];
+                if ($opt == 1) {
+                    $title="So luong san pham ban duoc theo tung thang";
+                    $arr = array();
+                    for ($i = 1; $i <= 12; $i++) {
+                        $s = count_prod_in_month($i);
+                        if ($s[0][0] != "")
+                            $arr[$i] = $s[0][0];
+                        else $arr[$i] = 0;
+                    }
+                }
+                if ($opt == 2) {
+                    $title="Doanh thu theo tung thang";
+                    $arr = array();
+                    for ($i = 1; $i <= 12; $i++) {
+                        $s = sum_total_in_month($i);
+                        if ($s[0][0] != "")
+                            $arr[$i] = $s[0][0];
+                        else $arr[$i] = 0;
+                    }
+                }
+                include "view/thongke.php";
                 break;
             case 'exit':
                 if (isset($_SESSION['role'])) unset($_SESSION['role']);
