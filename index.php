@@ -189,6 +189,9 @@ if (isset($_GET['act'])) {
             $user = get_one_User($_SESSION['iduser']);
             include "view/user.php";
             break;
+        case 'about':
+            include "view/about_us.php";
+            break;
         default:
             include 'view/home.php';
             break;

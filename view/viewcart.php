@@ -18,12 +18,12 @@
 </head>
 
 <body>
-    <ol class="breadcrumb ps-5">
+    <!-- <ol class="breadcrumb ps-5">
         <li class="breadcrumb-item">
             <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item active">giohang</li>
-    </ol>
+    </ol> -->
     <section class="ab-info-main">
         <div class="container py-3">
             <h3 class="tittle text-center">GIO HANG</h3>

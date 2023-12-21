@@ -179,7 +179,10 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 include "view/taikhoan.php";
                 break;
             case 'donhang':
-                $order_list = get_all_Order();
+                if ((isset($_POST['kyw'])) && ($_POST['kyw'] != ""))
+                    $kyw = $_POST['kyw'];
+                else $kyw = "";
+                $order_list = get_Order_by_code($kyw);
                 include "view/donhang.php";
                 break;
             case 'donhang_add':
@@ -256,7 +259,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
             case 'thongke':
                 $opt = $_GET['opt'];
                 if ($opt == 1) {
-                    $title="So luong san pham ban duoc theo tung thang";
+                    $title = "So luong san pham ban duoc theo tung thang";
                     $arr = array();
                     for ($i = 1; $i <= 12; $i++) {
                         $s = count_prod_in_month($i);
@@ -266,7 +269,7 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                     }
                 }
                 if ($opt == 2) {
-                    $title="Doanh thu theo tung thang";
+                    $title = "Doanh thu theo tung thang";
                     $arr = array();
                     for ($i = 1; $i <= 12; $i++) {
                         $s = sum_total_in_month($i);
@@ -288,6 +291,5 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
     } else {
         include "view/home.php";
     }
-
     include "view/footer.php";
 } else header('location: ../index.php');

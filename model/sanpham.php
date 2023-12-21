@@ -15,7 +15,7 @@ function view_increased($id)
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 }
-function add_Prod($cate_id, $film_name,$old_price, $price, $img, $view)
+function add_Prod($cate_id, $film_name, $old_price, $price, $img, $view)
 {
     $conn = openCon();
     $sql = "INSERT INTO film (cate_id,film_name,old_price,price,img,view) VALUES ('$cate_id','$film_name','$old_price','$price','$img','$view')";
@@ -28,7 +28,7 @@ function delete_Prod($id)
     $sql = "DELETE FROM film WHERE film_id=" . $id;
     $conn->exec($sql);
 }
-function update_Prod($id, $film_name, $img, $view,$old_price, $price, $cate_id)
+function update_Prod($id, $film_name, $img, $view, $old_price, $price, $cate_id)
 {
     $conn = openCon();
     if ($img == "") {
@@ -40,6 +40,7 @@ function update_Prod($id, $film_name, $img, $view,$old_price, $price, $cate_id)
     $stmt = $conn->prepare($sql);
     $stmt->execute();
 }
+
 function get_one_Prod($id)
 {
     $conn = openCon();

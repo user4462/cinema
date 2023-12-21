@@ -22,16 +22,17 @@
                 </h5>
                 <div class="available mt-3">
                     <form action="index.php?act=giohang_add" method="post" class="w3layouts-newsletter">
-                        <input type="number" value="1" min=1 max=50 name="sl" required="">
                         <input type="hidden" value="<?= $prod[0]['film_id'] ?>" name="id">
                         <input type="hidden" value="<?= $prod[0]['film_name'] ?>" name="name">
                         <input type="hidden" value="<?= $prod[0]['img'] ?>" name="image">
                         <input type="hidden" value="<?= $prod[0]['price'] ?>" name="price">
-                        <button type="submit" class="btn btn-outline-primary" name="addtocart" value="addtocart">Add</button>
+                        <div class="d-flex">
+                            <input type="number" value="1" min=1 max=50 name="sl" required="">
+                            <button type="submit" class="btn btn-outline-primary" name="addtocart" value="addtocart"><i class="fa-solid fa-cart-shopping pe-2"></i>Add</button>
+                        </div>
                     </form>
                     <div>
-                        <h3>Gioi thieu</h3>
-                        <p class="fs-5"><?= $prod[0]['detail'] ?></p>
+                    <?= $prod[0]['detail'] ?>
                     </div>
                 </div>
             </div>

@@ -84,6 +84,18 @@ function get_one_Cart($id)
     $res = $stmt->fetchAll();
     return $res;
 }
+function get_Order_by_code($kyw)
+{
+    $conn = openCon();
+    $sql = "SELECT * FROM orders WHERE 1";
+    if ($kyw != "")
+        $sql .= " AND code like '%" . $kyw . "%'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $res = $stmt->fetchAll();
+    return $res;
+}
 function get_one_Order($id)
 {
     $conn = openCon();

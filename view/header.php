@@ -54,8 +54,9 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="justify-content-end pe-5">
+                    <div class="justify-content-end">
                         <?php
+                        
                         if (isset($_SESSION['username']) && ($_SESSION['username'] != "")) {
                             echo '<div class="text-white">
                             <i class="fa-regular fa-user"></i>
@@ -64,13 +65,13 @@
                             echo '<a href="index.php?act=exit""><button type=" button" class="btn btn-primary me-3">Thoat</button></a></div>';
                         } else {
                         ?>
-                            <a href="index.php?act=dangnhap"><button type=" button" class="btn btn-primary me-3">Dang nhap</button></a>
-                            <a href="index.php?act=dangky"><button type=" button" class="btn btn-primary me-4">Dang ky</button></a>
+                            <a href="index.php?act=dangnhap"><button type=" button" class="btn btn-primary me-3">Log in</button></a>
+                            <a href="index.php?act=dangky"><button type=" button" class="btn btn-primary me-4">Sign in</button></a>
                         <?php } ?>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
                 </div>
             </nav>
         </div>

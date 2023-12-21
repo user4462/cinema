@@ -4,9 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="view/style.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .main {
+            padding: 50px 70px 20px 70px;
+        }
+
+        .table-bordered .border-2 {
+            border-width: 2px !important;
+        }
+
+        .custom-form {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .custom-table {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,7 +67,12 @@
             </div>
             <button type="submit" class="btn btn-primary" name="add" value="Add">Add New</button>
         </form>
-
+        <nav class="navbar bg-body-tertiary">
+            <form action="index.php?act=donhang" method="post" class="d-flex" role="search">
+                <button class="btn btn-outline-tertiary" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="form-control me-2" type="search" placeholder="Nhap ma don hang" aria-label="Search" name="kyw">
+            </form>
+        </nav>
         <table class="table-bordered border-dark custom-table">
             <thead>
                 <tr>

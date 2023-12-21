@@ -37,7 +37,7 @@
         <!--Grid row-->
         <div class="row pt-2">
           <!--Grid column-->
-          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-white" style="padding-left: 30px;">
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-white" style="padding-left: 50px;">
             <h5 class="text-uppercase">
               KC inc.
               <img src="/images/aaa.png" alt="" height="50px">
@@ -50,7 +50,7 @@
 
           <!--Grid column-->
           <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-white" style="padding-left: 50px;">
-            <h5 class="text-uppercase">Contact</h5>
+            <h5 class="text-uppercase" style="padding-top: 10px;">Contact</h5>
             <ul class="list-unstyled mb-0">
             <li >
                 <i class="fa-regular fa-envelope"></i>
@@ -70,7 +70,7 @@
 
           <!--Grid column-->
           <div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-white" style="padding-left: 50px;">
-            <h5 class="text-uppercase">Social</h5>
+            <h5 class="text-uppercase"  style="padding-top: 10px;">Social</h5>
             <ul class="list-unstyled mb-0">
             <li class="pt-3">
                 <i class="fa-brands fa-facebook fa-2x"></i>
