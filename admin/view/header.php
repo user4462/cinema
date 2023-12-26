@@ -23,6 +23,7 @@
                 <a href="/admin/index.php?act=sanpham" class="px-3  text-white">San pham</a>
                 <a href="/admin/index.php?act=taikhoan" class="px-3  text-white">Tai khoan</a>
                 <a href="/admin/index.php?act=donhang" class="px-3  text-white">Don hang</a>
+                <a href="/admin/index.php?act=binhluan" class="px-3  text-white">Binh luan</a>
                 <a href="/admin/index.php?act=exit" class="px-3  text-white">Thoat</a>
             </nav>
         </div>

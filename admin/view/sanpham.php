@@ -18,7 +18,7 @@
                     <?php
                     if (isset($cate_list)) {
                         foreach ($cate_list as $value)
-                            echo '<option value="' . $value['cate_id'] . '">' . $value['cate_name'] . '</option>';
+                            echo '<option value="' . $value['id'] . '">' . $value['cate_name'] . '</option>';
                     }
                     ?>
                 </select>

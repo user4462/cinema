@@ -35,8 +35,9 @@
     <div class="main">
 
         <h2>DON HANG</h2>
-
-        <form class="custom-form" action="index.php?act=donhang_add" method="post" enctype="multipart/form-data">
+        <?php 
+            if($showAdd!=0)
+            echo '<form class="custom-form" action="index.php?act=donhang_add" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <input type="text" class="form-control" name="code" id="" placeholder="Ma don hang">
             </div>
@@ -66,7 +67,9 @@
                 </tr>
             </div>
             <button type="submit" class="btn btn-primary" name="add" value="Add">Add New</button>
-        </form>
+        </form>';
+        ?>
+        
         <nav class="navbar bg-body-tertiary">
             <form action="index.php?act=donhang" method="post" class="d-flex" role="search">
                 <button class="btn btn-outline-tertiary" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>

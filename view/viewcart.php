@@ -85,13 +85,13 @@
                         <table class="table-bordered border-dark custom-table">
                             <thead>
                                 <tr>
-                                    <td class="border-2 p-2"><input type="text" name="name" id="" placeholder="Nhap ho ten"></td>
+                                    <td class="border-2 p-2"><input type="text" name="name" id="" placeholder="<?php if(isset($user)) echo''.$user[0]['name'].'';else echo'Nhap ho ten'?>"></td>
                                 </tr>
                                 <tr>
-                                    <td class="border-2 p-2"><input type="text" name="address" id="" placeholder="Nhap dia chi"></td>
+                                    <td class="border-2 p-2"><input type="text" name="address" id="" placeholder="<?php if(isset($user)) echo''.$user[0]['address'].'';else echo'Nhap dia chi'?>"></td>
                                 </tr>
                                 <tr>
-                                    <td class="border-2 p-2"><input type="text" name="email" id="" placeholder="Nhap email"></td>
+                                    <td class="border-2 p-2"><input type="text" name="email" id="" placeholder="<?php if(isset($user)) echo''.$user[0]['email'].'';else echo'Nhap email'?>"></td>
                                 </tr>
                                 <tr>
                                     <td class="border-2 p-2"><input type="text" name="tel" id="" placeholder="Nhap sdt"></td>

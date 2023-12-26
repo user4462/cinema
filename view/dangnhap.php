@@ -34,6 +34,11 @@
                             <input type="text" id="disabledTextInput" name="pass" class="form-control" placeholder="Password">
                         </div>
                         <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary w-50" name="login" value="login">Login</button></div>
+                        <div class="text-danger mt-3">
+                            <?php
+                            if ((isset($new)) && ($new != "")) echo $new;
+                            ?>
+                        </div>
                     </fieldset>
                 </form>
             </div>

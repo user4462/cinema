@@ -12,7 +12,7 @@
     <div class="container pt-4">
         <div class="row pb-1">
             <div class="col-6">
-                <h1><?php if($cate !="") echo $cate[0]['cate_name']; ?></h1>
+                <h1><?php if($cate !="") echo $cate['cate_name']; ?></h1>
             </div>
         </div>
         <div class="row">

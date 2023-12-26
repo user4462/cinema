@@ -19,13 +19,14 @@
             <div class="col-md-12 col-lg-6">
                 <h2>DON HANG</h2>
                 <?php
+                $order=new Order();
                 foreach ($id as $key) {
-                    $order=get_one_Order($key['id']);
+                    $order_info=$order->get_one_Order($key['id']);
                     echo '
                     <table class="table-bordered border-dark custom-table mt-4">
                         <thead>
                             <tr>
-                                <th class="border-2 p-2 fs-5" colspan="7" style="background-color: #d3dce3;">Ma don hang: '.$order[0]['code'].'</th>
+                                <th class="border-2 p-2 fs-5" colspan="7" style="background-color: #d3dce3;">Ma don hang: '.$order_info[0]['code'].'</th>
                             </tr>
                             <tr>
                                 <th class="border-2 p-2" style="background-color: #d3dce3;">STT</th>
@@ -37,7 +38,7 @@
                                 <th class="border-2 p-2" style="background-color: #d3dce3;">Hanh dong</th>
                             </tr>
                         </thead>';
-                    $cart_list = get_all_Cart_in_Order($key['id']);
+                    $cart_list = $order->get_all_Item_in_Order($key['id']);
                     $i = 0;
                     $s = 0;
                     foreach ($cart_list as $item) {

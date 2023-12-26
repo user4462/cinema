@@ -35,8 +35,8 @@
                     <td class="border-2 p-2">' . $item['cate_name'] . '</td>
                     <td class="border-2 p-2">
                         <div class="d-flex justify-content-around">
-                            <a href="index.php?act=danhmuc_edit&id=' . $item['cate_id'] . '">Edit</a>
-                            <a href="index.php?act=danhmuc_del&id=' . $item['cate_id'] . '">Delete</a>
+                            <a href="index.php?act=danhmuc_edit&id=' . $item['id'] . '">Edit</a>
+                            <a href="index.php?act=danhmuc_del&id=' . $item['id'] . '">Delete</a>
                         </div>
                     </td>
                 </tr>

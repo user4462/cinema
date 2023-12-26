@@ -18,11 +18,12 @@
                     <option value="0">Chon danh muc</option>
                     <?php
                 $cate_curr = $prod[0];
+               
                 if (isset($cate_list)) {
                     foreach ($cate_list as $value)
-                        if ($value['cate_id'] == $cate_curr['cate_id'])
-                            echo '<option value="' . $value['cate_id'] . '" selected>' . $value['cate_name'] . '</option>';
-                        else echo '<option value="' . $value['cate_id'] . '">' . $value['cate_name'] . '</option>';
+                        if ($value['id'] == $cate_curr['cate_id'])
+                            echo '<option value="' . $value['id'] . '" selected>' . $value['cate_name'] . '</option>';
+                        else echo '<option value="' . $value['id'] . '">' . $value['cate_name'] . '</option>';
                 }
                 ?>
                 </select>

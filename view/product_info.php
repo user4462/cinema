@@ -32,7 +32,7 @@
                         </div>
                     </form>
                     <div>
-                    <?= $prod[0]['detail'] ?>
+                        <?= $prod[0]['detail'] ?>
                     </div>
                 </div>
             </div>
@@ -45,6 +45,35 @@
             <div class="col-md-6 pl-lg-4">
                 <h3>Gioi thieu</h3>
                 <p class="fs-5"><?= $prod[0]['desc'] ?></p>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $("#cmt").load("view/comment/comment_form.php", {
+                        idprod: <?= $prod[0]['film_id'] ?>
+                    });
+                });
+            </script>
+            <div class="" id="cmt">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <h3>Phim goi y</h3>
+            <div class="container">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <?php
+                        foreach ($prod_list as $item) {
+                            echo ' <a href="index.php?act=sanpham_chitiet&id=' . $item['film_id'] . '"><img src="./uploads/' . $item['img'] . '"  class="pe-3" height="230px"></a>
+                            ';
+                        }
+                        ?>
+                         </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>

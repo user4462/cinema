@@ -28,8 +28,9 @@
                 <div class="col-md-6 contact-left-content ">
                     <h3>Thong tin gio hang</h3>
                     <?php
+                    $order = new Order();
                     if ((isset($_SESSION['id'])) && ($_SESSION['id'] > 0)) {
-                        $cart_list = get_all_Cart_in_Order($_SESSION['id']);
+                        $cart_list = $order->get_all_Item_in_Order($_SESSION['id']);
                         if ((isset($cart_list)) && (count($cart_list) > 0)) {
                             echo '
                             <table class="table-bordered border-dark custom-table">
@@ -71,32 +72,32 @@
                     <h3>Thong tin giao hang</h3>
                     <?php
                     if ((isset($_SESSION['id'])) && ($_SESSION['id'] > 0)) {
-                        $order = get_one_Order($_SESSION['id']);
-                        if (count($order) > 0);
+                        $order_info = $order->get_one_Order($_SESSION['id']);
+                        if (count($order_info) > 0);
                     }
                     ?>
-                    <h4>Ma don hang: <?= $order[0]['code'] ?></h4>
+                    <h4>Ma don hang: <?= $order_info[0]['code'] ?></h4>
                     <table class="">
                         <thead>
                             <tr>
-                                <td><strong>Ten nguoi nhan: </strong><br><?= $order[0]['user_name'] ?></td>
+                                <td><strong>Ten nguoi nhan: </strong><br><?= $order_info[0]['user_name'] ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Dia chi nguoi nhan: </strong><br><?= $order[0]['address'] ?></td>
+                                <td><strong>Dia chi nguoi nhan: </strong><br><?= $order_info[0]['address'] ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Email nguoi nhan: </strong><br><?= $order[0]['email'] ?></td>
+                                <td><strong>Email nguoi nhan: </strong><br><?= $order_info[0]['email'] ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Dien thoai nguoi nhan: </strong><br><?= $order[0]['tel'] ?></td>
+                                <td><strong>Dien thoai nguoi nhan: </strong><br><?= $order_info[0]['tel'] ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Ngay dat hang: </strong><br><?= $order[0]['date'] ?></td>
+                                <td><strong>Ngay dat hang: </strong><br><?= $order_info[0]['date'] ?></td>
                             </tr>
                             <tr>
                                 <td><strong>Phuong thuc thanh toan: </strong><br>
                                     <?php
-                                    switch ($order[0]['pttt']) {
+                                    switch ($order_info[0]['pttt']) {
                                         case '1':
                                             $temp = "Thanh toan khi nhan hang";
                                             break;

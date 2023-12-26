@@ -14,34 +14,34 @@
         <h2>CAP NHAT DON HANG</h2>
         <form class="custom-form" action="index.php?act=donhang_update" method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <input type="text" class="form-control" name="" id="" value="<?php echo $order[0]['code'] ?>">
+                <input type="text" class="form-control" name="" id="" value="<?php echo $order_info[0]['code'] ?>">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="name" id="" value="<?php echo $order[0]['user_name']?>">
+                <input type="text" class="form-control" name="name" id="" value="<?php echo $order_info[0]['user_name']?>">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="addr" id="" value="<?php echo $order[0]['address'] ?>">
+                <input type="text" class="form-control" name="addr" id="" value="<?php echo $order_info[0]['address'] ?>">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="mail" id="" value="<?php echo $order[0]['email'] ?>">
+                <input type="text" class="form-control" name="mail" id="" value="<?php echo $order_info[0]['email'] ?>">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="tel" id="" value="<?php echo $order[0]['tel'] ?>">
+                <input type="text" class="form-control" name="tel" id="" value="<?php echo $order_info[0]['tel'] ?>">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="total" id="" value="<?php echo $order[0]['total'] ?>">
+                <input type="text" class="form-control" name="total" id="" value="<?php echo $order_info[0]['total'] ?>">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control" name="date" id="" value="<?php echo $order[0]['date'] ?>">
+                <input type="text" class="form-control" name="date" id="" value="<?php echo $order_info[0]['date'] ?>">
             </div>
             <div class="mb-3">
                 <tr>
                     <?php
-                    if ($order[0]['pttt'] == 1)
+                    if ($order_info[0]['pttt'] == 1)
                         echo '<input type="radio" name="pttt" value="1" checked>Thanh toan khi nhan hang <br>
                         <input type="radio" name="pttt" value="2">Thanh toan chuyen khoan <br>
                         <input type="radio" name="pttt" value="3">Thanh toan vi Momo <br>';
-                    else if ($order[0]['pttt'] == 2)
+                    else if ($order_info[0]['pttt'] == 2)
                         echo '<input type="radio" name="pttt" value="1">Thanh toan khi nhan hang <br>
                         <input type="radio" name="pttt" value="2" checked>Thanh toan chuyen khoan <br>
                         <input type="radio" name="pttt" value="3">Thanh toan vi Momo <br>';
@@ -52,7 +52,7 @@
                     ?>
                 </tr>
             </div>
-            <input type="hidden" name="id" value="<?php echo $order[0]['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $order_info[0]['id'] ?>">
             <button type="submit" class="btn btn-primary" name="update" value="update">Update</button>
         </form>
         <table class="table-bordered border-dark custom-table">
@@ -83,7 +83,7 @@
                         <td class="border-2 p-2">' . $tt . '</td>
                         <td class="border-2 p-2">
                             <div class="d-flex justify-content-around">
-                            <a href="index.php?act=donhang_del_sanpham&order_id=' . $order[0]['id'] . '&id=' . $item['id'] . '">Delete</a>
+                            <a href="index.php?act=donhang_del_sanpham&order_id=' . $order_info[0]['id'] . '&id=' . $item['id'] . '">Delete</a>
                             </div>
                         </td>
                     </tr>

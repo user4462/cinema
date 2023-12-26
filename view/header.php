@@ -42,9 +42,10 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="index.php?act=products">Tat ca san pham</a></li>
                                     <?php
-                                    $cate_list = get_all_Cate();
+                                    $category = new Category();
+                                    $cate_list = $category->get_all_Cate();
                                     foreach ($cate_list as $item) {
-                                        echo '<li><a class="dropdown-item" href="index.php?act=products&id=' . $item['cate_id'] . '">' . $item['cate_name'] . '</a></li>';
+                                        echo '<li><a class="dropdown-item" href="index.php?act=products&id=' . $item['id'] . '">' . $item['cate_name'] . '</a></li>';
                                     }
                                     ?>
                                 </ul>

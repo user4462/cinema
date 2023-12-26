@@ -43,11 +43,10 @@
                             <input type="text" id="disabledTextInput" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary w-50" name="signin" value="signin">Sign in</button></div>
-                        <div class="text-danger mt-3">
-                            <?php 
-                                if((isset($new))&&($new!="")) echo $new;
-                            ?>
-                        </div>
+                        <?php
+                        if ((isset($new)) && ($new == 0)) echo '<div class="text-danger mt-3">Day dien day du thong tin</div>';
+                        else  if ((isset($new)) && ($new == 1)) echo '<div class="text-primary mt-3">Dang ki thanh cong</div>';
+                        ?>
                     </fieldset>
                 </form>
             </div>
