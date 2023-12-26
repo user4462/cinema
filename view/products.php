@@ -12,7 +12,8 @@
     <div class="container pt-4">
         <div class="row pb-1">
             <div class="col-6">
-                <h1><?php if($cate !="") echo $cate['cate_name']; ?></h1>
+                <h1><?= $new ?></h1>
+                <h1><?php if ($cate != "") echo $cate['cate_name']; ?></h1>
             </div>
         </div>
         <div class="row">
@@ -22,12 +23,12 @@
                 <div class="product-item py-3 border">
                     <form action="index.php?act=giohang_add" method="post">
                         <div class="bg-light overflow-hidden">
-                            <a href="index.php?act=sanpham_chitiet&id=' . $item['film_id'] .'">
+                            <a href="index.php?act=sanpham_chitiet&id=' . $item['film_id'] . '">
                                 <img src="./uploads/' . $item['img'] . '" class="container-fluid w-100" alt="" height="470px">
                             </a>
                         </div>
                         <div class="text-center p-3">
-                            <a href="index.php?act=sanpham_chitiet&id=' . $item['film_id'] .'" class="h5 d-block mb-2">' . $item['film_name'] . '</a>
+                            <a href="index.php?act=sanpham_chitiet&id=' . $item['film_id'] . '" class="h5 d-block mb-2">' . $item['film_name'] . '</a>
                             <span class="me-1">$' . $item['price'] . '</span>
                             <span class="text-decoration-line-through">$' . $item['old_price'] . '</span>
                         </div>

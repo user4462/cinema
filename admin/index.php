@@ -317,12 +317,12 @@ if (isset($_SESSION['role']) && ($_SESSION['role'] == 1)) {
                 include "view/thongke.php";
                 break;
             case 'binhluan':
-                $comment=new Commemt();
+                $comment=new Comment();
                 $comt_list = $comment->get_all_Comt(0);
                 include "view/binhluan.php";
                 break;
             case 'binhluan_del':
-                $comment=new Commemt();
+                $comment=new Comment();
                 if (isset($_GET['id'])) {
                     $id = $_GET['id'];
                     $comment->delele_Comt($id);

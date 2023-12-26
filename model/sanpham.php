@@ -4,7 +4,7 @@ class Product
     function get_Ramdom_Prod()
     {
         $conn = openCon();
-        $stmt = $conn->prepare("SELECT * FROM film ORDER BY RAND() LIMIT 7");
+        $stmt = $conn->prepare("SELECT * FROM film ORDER BY RAND() LIMIT 4");
         $stmt->execute();
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $res = $stmt->fetchAll();
@@ -63,15 +63,37 @@ class Product
     }
     function get_all_Prod($kyw = "", $cate_id = 0)
     {
-        $conn = openCon();
-        $sql = "SELECT * FROM film WHERE 1";
-        if ($kyw != "")
-            $sql .= " AND film_name like '%" . $kyw . "%'";
-        if ($cate_id > 0) $sql .= " AND cate_id=" . $cate_id;
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $res = $stmt->fetchAll();
-        return $res;
+        try {
+            $conn = openCon();
+            $sql = "SELECT * FROM film WHERE 1";
+
+            if (!empty($kyw)) {
+                $sql .= " AND film_name LIKE :keyword";
+            }
+
+            if ($cate_id > 0) {
+                $sql .= " AND cate_id = :cate_id";
+            }
+
+            $stmt = $conn->prepare($sql);
+
+            if (!empty($kyw)) {
+                $keyword = '%' . $kyw . '%';
+                $stmt->bindParam(':keyword', $keyword, PDO::PARAM_STR);
+            }
+
+            if ($cate_id > 0) {
+                $stmt->bindParam(':cate_id', $cate_id, PDO::PARAM_INT);
+            }
+
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            $res = $stmt->fetchAll();
+            return $res;
+        } catch (PDOException $e) {
+            // Xử lý ngoại lệ PDO tại đây
+            // Ví dụ: log lỗi, hiển thị thông báo, ...
+            echo "Lỗi: " . $e->getMessage();
+        }
     }
 }

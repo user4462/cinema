@@ -6,6 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        .film-thumbnail {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 300px;
+            /* Chiều cao cố định (có thể điều chỉnh) */
+        }
+
+        .film-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .film-thumbnail:hover {
+            transform: scale(1.05);
+        }
+
+        .film-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    </style>
+
+
+
 </head>
 
 <body>
@@ -59,23 +95,24 @@
             <div class="" id="cmt">
             </div>
         </div>
-        <div class="row pt-3">
-            <h3>Phim goi y</h3>
+        <div class="row pt-3 film-suggestion">
+            <h3>Phim gợi ý</h3>
             <div class="container">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <?php
-                        foreach ($prod_list as $item) {
-                            echo ' <a href="index.php?act=sanpham_chitiet&id=' . $item['film_id'] . '"><img src="./uploads/' . $item['img'] . '"  class="pe-3" height="230px"></a>
-                            ';
-                        }
-                        ?>
-                         </tr>
-                    </thead>
-                </table>
+                <div class="row">
+                    <?php foreach ($prod_list as $item) : ?>
+                        <div class="col-md-3 mb-3">
+                            <div class="film-thumbnail">
+                                <a href="index.php?act=sanpham_chitiet&id=<?= $item['film_id'] ?>">
+                                    <img src="./uploads/<?= $item['img'] ?>" class="img-fluid" alt="<?= $item['film_name'] ?>">
+                                    <p class="film-title"><?= $item['film_name'] ?></p>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

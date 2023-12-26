@@ -20,7 +20,10 @@ if (isset($_GET['act'])) {
             $category = new Category();
             $product = new Product();
             if ((isset($_POST['kyw'])) && ($_POST['kyw'] != ""))
+            {
                 $kyw = $_POST['kyw'];
+                $new='Tim kiem cho '.$kyw.'';
+            }
             else $kyw = "";
             if ((isset($_GET['id'])) && ($_GET['id'] > 0))
                 $id = $_GET['id'];
@@ -137,32 +140,28 @@ if (isset($_GET['act'])) {
             $account = new Account();
             $order = new Order;
             if ((isset($_POST['thanhtoan'])) && ($_POST['thanhtoan'])) {
-                $total = $_POST['total'];
-                $address = $_POST['address'];
-                $tel = $_POST['tel'];
-                if (isset($_POST['pttt']))
-                    $pttt = $_POST['pttt'];
-                else $pttt = 1;
                 if (isset($_SESSION['iduser'])) {
+                    $total = $_POST['total'];
+                    $tel = $_POST['tel'];
+                    if (isset($_POST['pttt']))
+                        $pttt = $_POST['pttt'];
+                    else $pttt = 1;
                     $user_id = $_SESSION['iduser'];
                     $user =  $account->get_one_User($user_id);
-                    $name = $user[0]['name'];
-                    $email = $user[0]['email'];
-                } else {
-                    $user_id = 0;
-                    $name = $_POST['name'];
-                    $email = $_POST['email'];
-                }
-                $date = date('Y/m/d');
-                $code = "aba" . rand(0, 999999);
-                $id = $order->createOrder($code, $total, $pttt, $date, $user_id, $name, $address, $email, $tel);
-                $_SESSION['id'] = $id;
-                if (isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)) {
-                    foreach ($_SESSION['giohang'] as $item) {
-                        $order->add_to_cart($id, $item[0], $item[1], $item[2], $item[3], $item[4]);
+                    if($_POST['name']!="") $name=$_POST['name']; else $name = $user[0]['name'];
+                    if($_POST['address']!="") $address=$_POST['address']; else $address = $user[0]['address'];
+                    if($_POST['email']!="") $email=$_POST['email']; else $email = $user[0]['email'];
+                    $date = date('Y/m/d');
+                    $code = "aba" . rand(0, 999999);
+                    $id = $order->createOrder($code, $total, $pttt, $date, $user_id, $name, $address, $email, $tel);
+                    $_SESSION['id'] = $id;
+                    if (isset($_SESSION['giohang']) && (count($_SESSION['giohang']) > 0)) {
+                        foreach ($_SESSION['giohang'] as $item) {
+                            $order->add_to_cart($id, $item[0], $item[1], $item[2], $item[3], $item[4]);
+                        }
+                        unset($_SESSION['giohang']);
                     }
-                    unset($_SESSION['giohang']);
-                }
+                }else header('location: index.php?act=dangnhap');
             }
             include 'view/order.php';
             break;

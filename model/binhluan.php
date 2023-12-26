@@ -1,5 +1,5 @@
 <?php
-class Commemt
+class Comment
 {
     function add_Comt($content, $user_id, $film_id, $date)
     {
